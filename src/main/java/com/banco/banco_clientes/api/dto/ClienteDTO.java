@@ -1,5 +1,6 @@
 package com.banco.banco_clientes.api.dto;
 
+import com.banco.banco_clientes.persistence.entities.Cliente;
 import lombok.Data;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -29,4 +30,17 @@ public class ClienteDTO {
     private String contraseña;
 
     private String estado;
+
+    public ClienteDTO (Cliente cliente){
+        this.clienteid = cliente.getClienteid();
+        this.id = cliente.getId();
+        this.nombre = cliente.getNombre();
+        this.edad = cliente.getEdad();
+        this.identificacion = cliente.getIdentificacion();
+        this.direccion = cliente.getDireccion();
+        this.estado = cliente.getEstado();
+        this.genero = cliente.getGenero();
+        this.telefono = cliente.getTelefono();
+        this.contraseña = cliente.getContraseña();
+    }
 }
