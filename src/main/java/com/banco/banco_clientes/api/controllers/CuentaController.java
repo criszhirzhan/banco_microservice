@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*")
 @RequestMapping("/cuentas")
 public class CuentaController {
-    private static final Logger log = LoggerFactory.getLogger(ClienteController.class);
+    private static final Logger log = LoggerFactory.getLogger(CuentaController.class);
 
     private final CuentaService cuentaService;
 

@@ -18,9 +18,11 @@ public class Movimiento {
 
     private String tipoMovimiento;
 
-    private BigDecimal valor;
+    private String descripcionMovimiento;
 
-    private BigDecimal saldo;
+    private Double valor;
+
+    private Double saldo;
 
     @ManyToOne
     private Cuenta cuenta;

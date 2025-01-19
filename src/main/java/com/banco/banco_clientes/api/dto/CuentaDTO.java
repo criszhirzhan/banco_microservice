@@ -1,13 +1,13 @@
 package com.banco.banco_clientes.api.dto;
 
 import com.banco.banco_clientes.persistence.entities.Cuenta;
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -30,6 +30,8 @@ public class CuentaDTO {
 
 
     private String estado;
+
+    private List<MovimientoDTO> movimientoDTOList;
 
     public CuentaDTO (Cuenta cuenta){
         this.id = cuenta.getId();

@@ -108,4 +108,18 @@ public class GlobalExceptionHandler {
                 .build();
     }
 
+    @ExceptionHandler(BalanceNotAvailableException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    @ResponseBody
+    public Response notBalanceAvailableHandler(BalanceNotAvailableException ex, HttpServletRequest req){
+
+        log.error(ERROR, ex.getMessage(), req.getRequestURI());
+
+        return Response.builder()
+                .code(HttpStatus.CONFLICT.value())
+                .response(Messages.ERROR)
+                .message(ex.getMessage())
+                .build();
+    }
+
 }

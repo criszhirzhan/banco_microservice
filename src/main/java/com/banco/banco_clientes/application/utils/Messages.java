@@ -15,7 +15,20 @@ public class Messages {
     public static final String NOT_FOUND = "Registro no encontrado";
 
     public static final String CLIENT_NOT_FOUND = "Cliente no encontrado";
+
+    public static final String ACCOUNT_NOT_FOUND = "Cuenta no encontrada";
     public static final String UPDATE_SUCCESSFUL = "Registro actualizado exitosamente.";
     public static final String DELETE_SUCCESSFUL = "Registro eliminado exitosamente.";
     public static final String DELETE_FAILED = "El registro no pudo ser eliminado.";
+
+    public static final String DEPOSIT = "DEPOSITO";
+
+    public static final String DEPOSIT_OF = "Depósito de %s";
+    public static final String WITHDRAW = "RETIRO";
+    public static final String WITHDRAW_OF = "Retiro de %s";
+
+    public static final String BALANCE_NOT_AVAILABLE = "Saldo insuficiente";
+    public static final String SUCCESSFUL_MOVE = "Movimiento bancario realizado con éxito";
+
+    public static final String ERROR_MOVE = "El movimiento bancario no se puedo realizar";
 }
