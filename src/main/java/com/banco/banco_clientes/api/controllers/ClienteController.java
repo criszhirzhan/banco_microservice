@@ -57,4 +57,23 @@ public class ClienteController {
 
         return ResponseEntity.ok(clientes);
     }
+
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<Response> updateCliente(@PathVariable Long id, @RequestBody @Valid ClienteDTO clienteDTO) {
+        log.info("** Start updateCliente() **");
+        String message = service.updateCliente(id, clienteDTO);
+        Response response = new Response(message);
+        log.info("** End updateCliente() **");
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Response> deleteCliente(@PathVariable Long id) {
+        log.info("** Start deleteCliente() **");
+        String message = service.deleteCliente(id);
+        Response response = new Response(message);
+        log.info("** End deleteCliente() **");
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
 }

@@ -1,10 +1,7 @@
 package com.banco.banco_clientes.api.controllers;
 
 import com.banco.banco_clientes.api.response.Response;
-import com.banco.banco_clientes.application.exceptions.EmptyDataException;
-import com.banco.banco_clientes.application.exceptions.ErrorDetail;
-import com.banco.banco_clientes.application.exceptions.RecordAlreadyExistsException;
-import com.banco.banco_clientes.application.exceptions.RegistrationFailedException;
+import com.banco.banco_clientes.application.exceptions.*;
 import com.banco.banco_clientes.application.utils.Messages;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
@@ -92,6 +89,20 @@ public class GlobalExceptionHandler {
         log.error(ERROR, ex.getMessage(), req);
         return Response.builder()
                 .code(HttpStatus.BAD_REQUEST.value())
+                .response(Messages.ERROR)
+                .message(ex.getMessage())
+                .build();
+    }
+
+    @ExceptionHandler(NotFoundEntityException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ResponseBody
+    public Response notFoundExceptionHandler(NotFoundEntityException ex, HttpServletRequest req){
+
+        log.error(ERROR, ex.getMessage(), req.getRequestURI());
+
+        return Response.builder()
+                .code(HttpStatus.NOT_FOUND.value())
                 .response(Messages.ERROR)
                 .message(ex.getMessage())
                 .build();

@@ -11,4 +11,8 @@ public interface ClienteService {
     public String addCliente(ClienteDTO clienteDTO);
 
     public Page<ClienteDTO> getClientesWithFilter(ClienteFilterDTO filterDTO);
+
+    public String updateCliente(Long id, ClienteDTO clienteDTO);
+
+    public String deleteCliente(Long id);
 }
