@@ -27,7 +27,7 @@ public class Messages {
     public static final String WITHDRAW = "RETIRO";
     public static final String WITHDRAW_OF = "Retiro de %s";
 
-    public static final String BALANCE_NOT_AVAILABLE = "Saldo insuficiente";
+    public static final String BALANCE_NOT_AVAILABLE = "Saldo no disponible";
     public static final String SUCCESSFUL_MOVE = "Movimiento bancario realizado con éxito";
 
     public static final String ERROR_MOVE = "El movimiento bancario no se puedo realizar";
