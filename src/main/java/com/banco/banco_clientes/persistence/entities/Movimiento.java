@@ -4,24 +4,24 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Data
 @Entity
-public class Cuenta {
+public class Movimiento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
-    private String numeroCuenta;
+    private Date fecha;
 
-    private String tipoCuenta;
-    private Double saldoInicial;
-    private String estado;
+    private String tipoMovimiento;
+
+    private BigDecimal valor;
+
+    private BigDecimal saldo;
 
     @ManyToOne
-    private Cliente cliente;
-
+    private Cuenta cuenta;
 }
-

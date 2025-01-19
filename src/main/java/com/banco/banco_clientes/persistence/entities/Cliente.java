@@ -9,14 +9,13 @@ import java.util.List;
 @Entity
 public class Cliente extends Persona {
 
-    @Column(unique = true) // Cliente ID debe ser único
+    @Column(unique = true)
     private String clienteid;
 
     private String contraseña;
     private String estado;
 
-    // Relación con las cuentas
-    @OneToMany(mappedBy = "cliente") // Un cliente puede tener muchas cuentas
+    @OneToMany(mappedBy = "cliente")
     private List<Cuenta> cuentas;
 
 }

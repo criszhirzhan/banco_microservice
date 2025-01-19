@@ -13,7 +13,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -28,11 +27,11 @@ public class ClienteController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Response> addCustomer (@RequestBody @Valid ClienteDTO cliente){
+    public ResponseEntity<Response> addCliente (@RequestBody @Valid ClienteDTO cliente){
 
-        log.info("** Start cliente()**");
+        log.info("** Start addCliente()**");
         Response response = new Response(service.addCliente(cliente));
-        log.info("** End cliente()**");
+        log.info("** End addCliente()**");
 
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }

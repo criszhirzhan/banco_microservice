@@ -36,7 +36,7 @@ public class ClienteServiceImpl implements ClienteService {
         }
         Cliente cliente = getCliente(clienteDTO);
         try {
-            Cliente clienteSaved = clienteRepository.save(cliente);
+            clienteRepository.save(cliente);
             return Messages.REGISTER_SUCCESSFUL;
         } catch (Exception e) {
             throw new RegistrationFailedException(Messages.REGISTER_FAILED);
