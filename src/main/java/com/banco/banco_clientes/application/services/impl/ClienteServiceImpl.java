@@ -11,12 +11,9 @@ import com.banco.banco_clientes.application.utils.ConstantesApp;
 import com.banco.banco_clientes.application.utils.Messages;
 import com.banco.banco_clientes.persistence.entities.Cliente;
 import com.banco.banco_clientes.persistence.repository.ClienteRepository;
-import org.checkerframework.checker.units.qual.C;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ClienteServiceImpl implements ClienteService {
@@ -61,7 +58,7 @@ public class ClienteServiceImpl implements ClienteService {
         cliente.setDireccion(clienteDTO.getDireccion());
         cliente.setTelefono(clienteDTO.getTelefono());
         cliente.setClienteid(clienteDTO.getIdentificacion());
-        cliente.setContraseña(clienteDTO.getContraseña());
+        cliente.setPassword(clienteDTO.getPassword());
         cliente.setEstado(clienteDTO.getEstado());
         try {
             clienteRepository.save(cliente);
@@ -93,7 +90,7 @@ public class ClienteServiceImpl implements ClienteService {
         cliente.setDireccion(clienteDTO.getDireccion());
         cliente.setTelefono(clienteDTO.getTelefono());
         cliente.setClienteid(clienteDTO.getIdentificacion());
-        cliente.setContraseña(clienteDTO.getContraseña());
+        cliente.setPassword(clienteDTO.getPassword());
         cliente.setEstado(clienteDTO.getEstado());
         return cliente;
     }

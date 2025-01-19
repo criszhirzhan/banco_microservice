@@ -12,7 +12,7 @@ public class Cliente extends Persona {
     @Column(unique = true)
     private String clienteid;
 
-    private String contraseña;
+    private String password;
     private String estado;
 
     @OneToMany(mappedBy = "cliente")

@@ -30,7 +30,7 @@ public class ClienteDTO {
     private String clienteid;
 
     @NotBlank(message = "La contraseña es obligatoria")
-    private String contraseña;
+    private String password;
 
     private String estado;
 
@@ -44,6 +44,6 @@ public class ClienteDTO {
         this.estado = cliente.getEstado();
         this.genero = cliente.getGenero();
         this.telefono = cliente.getTelefono();
-        this.contraseña = cliente.getContraseña();
+        this.password = cliente.getPassword();
     }
 }

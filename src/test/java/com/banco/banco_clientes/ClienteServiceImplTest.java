@@ -48,7 +48,7 @@ public class ClienteServiceImplTest {
         clienteDTO.setEdad(30);
         clienteDTO.setDireccion("Otavalo sn y principal");
         clienteDTO.setTelefono("098254785");
-        clienteDTO.setContraseña("1234");
+        clienteDTO.setPassword("1234");
         clienteDTO.setEstado("ACTIVO");
 
         cliente = new Cliente();
@@ -59,7 +59,7 @@ public class ClienteServiceImplTest {
         cliente.setDireccion(clienteDTO.getDireccion());
         cliente.setTelefono(clienteDTO.getTelefono());
         cliente.setClienteid(clienteDTO.getIdentificacion());
-        cliente.setContraseña(clienteDTO.getContraseña());
+        cliente.setPassword(clienteDTO.getPassword());
         cliente.setEstado(clienteDTO.getEstado());
     }
 
