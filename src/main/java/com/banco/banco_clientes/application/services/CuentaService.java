@@ -8,4 +8,6 @@ public interface CuentaService {
     public String addCuenta(CuentaDTO cuentaDTO);
 
     public Page<CuentaDTO> getCuentasWithFilter(CuentaFilterDTO filterDTO);
+
+    public String deleteCuenta(Long id);
 }

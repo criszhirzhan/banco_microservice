@@ -4,9 +4,13 @@ import com.banco.banco_clientes.persistence.entities.Cliente;
 import lombok.Data;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class ClienteDTO {
     private Long id;

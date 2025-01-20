@@ -57,4 +57,13 @@ public class CuentaController {
 
         return ResponseEntity.ok(cuentas);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Response> deleteCuenta(@PathVariable Long id) {
+        log.info("** Start deleteCuenta() **");
+        String message = cuentaService.deleteCuenta(id);
+        Response response = new Response(message);
+        log.info("** End deleteCuenta() **");
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
 }

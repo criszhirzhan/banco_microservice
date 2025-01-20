@@ -1,14 +1,13 @@
 package com.banco.banco_clientes.api.response;
 
 import com.banco.banco_clientes.application.exceptions.ErrorDetail;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

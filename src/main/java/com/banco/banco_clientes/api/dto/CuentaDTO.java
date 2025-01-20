@@ -2,14 +2,14 @@ package com.banco.banco_clientes.api.dto;
 
 import com.banco.banco_clientes.persistence.entities.Cuenta;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class CuentaDTO {
     private Long id;

@@ -1,10 +1,10 @@
 package com.banco.banco_clientes.api.dto;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class MovimientoDTO {
 

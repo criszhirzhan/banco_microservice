@@ -6,6 +6,7 @@ import com.banco.banco_clientes.application.exceptions.NotFoundEntityException;
 import com.banco.banco_clientes.application.exceptions.RecordAlreadyExistsException;
 import com.banco.banco_clientes.application.exceptions.RegistrationFailedException;
 import com.banco.banco_clientes.application.services.CuentaService;
+import com.banco.banco_clientes.application.utils.ConstantesApp;
 import com.banco.banco_clientes.application.utils.Messages;
 import com.banco.banco_clientes.persistence.entities.Cliente;
 import com.banco.banco_clientes.persistence.entities.Cuenta;
@@ -55,5 +56,18 @@ public class CuentaServiceImpl implements CuentaService {
     public Page<CuentaDTO> getCuentasWithFilter(CuentaFilterDTO filterDTO) {
         Pageable pageable = filterDTO.toPageable();
         return cuentaRepository.findCuentasWithFilter(filterDTO.getCedula(), filterDTO.getNumeroCuenta(), filterDTO.getEstado(), filterDTO.getTipoCuenta(), pageable);
+    }
+
+    @Override
+    public String deleteCuenta(Long id) {
+
+        Cuenta cuenta = cuentaRepository.findById(id).orElseThrow(() -> new NotFoundEntityException(Messages.ACCOUNT_NOT_FOUND));
+        cuenta.setEstado(ConstantesApp.INACTIVO);
+        try {
+            cuentaRepository.save(cuenta);
+            return Messages.DELETE_SUCCESSFUL;
+        } catch (Exception e) {
+            throw new RegistrationFailedException(Messages.DELETE_FAILED);
+        }
     }
 }
