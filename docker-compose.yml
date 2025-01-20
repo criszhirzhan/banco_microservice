@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  banco-clientes:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - banco-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://banco-db:5432/banco
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.PostgreSQLDialect
+  banco-db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=banco
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - banco-data:/var/lib/postgresql/data
+
+volumes:
+  banco-data:
+    driver: local
